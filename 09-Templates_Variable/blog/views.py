@@ -22,3 +22,10 @@ def cerita(request):
 		'kontributor':'sandra bulog',
 	}
 	return render(request,'blog/index.html',context)
+
+def ulasan(request):
+	context = {
+		'judul':'ulasan',
+		'kontributor':'mario Teguh',
+	}
+	return render(request,'blog/ulasan.html',context)
