@@ -1,10 +1,10 @@
-from django.conf.urls import url,include
+from django.urls import re_path,include
 from django.contrib import admin
 
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^$', views.index),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^blog/', include('blog.urls')),
+    re_path(r'^$', views.index),
 ]

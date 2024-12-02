@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 urlpatterns = [
-	url(r'^cerita/$',views.cerita),
-	url(r'^news/$',views.news),
-	url(r'^$', views.index),
+	re_path(r'^cerita/$',views.cerita),
+	re_path(r'^news/$',views.news),
+	re_path(r'^$', views.index),
 ]
