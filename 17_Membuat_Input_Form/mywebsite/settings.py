@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--hz#cv72qfd0jeosq-1e4(=ng$laf$34z7m3((o$azdp^cx_ga'
+SECRET_KEY = 'django-insecure-fef%zt^dpo9!(4&74^@rs9o)i_w*px15r9^oc2ox+6@=itmv13'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pos'
 ]
 
 MIDDLEWARE = [
@@ -76,12 +75,8 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_db',  # Ganti dengan nama database Anda
-        'USER': 'your_database_user',  # Ganti dengan username database Anda
-        'PASSWORD': 'your_database_password',  # Ganti dengan password database Anda
-        'HOST': 'localhost',  # Atau alamat IP server database
-        'PORT': '3306',  # Port default MySQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
