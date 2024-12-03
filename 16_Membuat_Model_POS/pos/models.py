@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class Category(models.Model):
+    code = models.CharField(max_length=20, default='C001')
     name = models.CharField(max_length=255)
 
 class Product(models.Model):
@@ -25,9 +26,3 @@ class TransactionItem(models.Model):
     transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
-
-class User(AbstractUser):
-    # Menambahkan field tambahan jika diperlukan, misalnya:
-    # phone_number = models.CharField(max_length=20)
-    is_cashier = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False)
