@@ -1,9 +1,9 @@
-from django.urls import re_path
+from django.urls import re_path, path
 
 from pos import views
 
 urlpatterns = [
-    re_path(r'^category/', views.categoryList),
-    re_path(r'^product/', views.product_list),
-    re_path(r'^product/add', views.product_add),
+    path('category/', views.categoryList),
+    path('product/', views.product_list),
+    path('product/add', views.product_add),
 ]

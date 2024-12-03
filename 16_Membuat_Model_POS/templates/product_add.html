@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Add Produk{% endblock %}
+{% block content %}
     <h1>{{ title }}</h1>
    <form method="post">
         {% csrf_token %}
@@ -20,5 +16,4 @@
         {% endif %}
         <button type="submit">Tambah Produk</button>
     </form>
-</body>
-</html>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from pos.forms import ProductForm
 from pos.models import Category, Product
@@ -9,6 +9,9 @@ def product_add(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('/post/product/')
+        else:
+            return redirect('/post/product/add')
     else:
         form = ProductForm()
     return render(request, 'product_add.html', {'form': form})
