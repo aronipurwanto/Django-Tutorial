@@ -11,15 +11,21 @@
         <td>Category</td>
         <td>Decription</td>
         <td>Price</td>
+        <td>#</td>
     </thead>
     <tbody>
         {% for product in products %}
             <tr>
-            <td>{{ product.id }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.category.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.price }}</td>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                        <a href="" class="btn btn-warning btn-xs">Edit</a>
+                        <a href="" class="btn btn-success btn-xs">View</a>
+                        <a href="" class="btn btn-danger btn-xs">Delete</a>
+                   </td>
             </tr>
         {% endfor %}
     </tbody>
