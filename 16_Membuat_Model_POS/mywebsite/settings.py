@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,13 +76,17 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_db',  # Ganti dengan nama database Anda
-        'USER': 'your_database_user',  # Ganti dengan username database Anda
-        'PASSWORD': 'your_database_password',  # Ganti dengan password database Anda
-        'HOST': 'localhost',  # Atau alamat IP server database
-        'PORT': '3306',  # Port default MySQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'django_pos',  # Ganti dengan nama database Anda
+    #     'USER': 'root',  # Ganti dengan username database Anda
+    #     'PASSWORD': 'P@ssW0rd32!',  # Ganti dengan password database Anda
+    #     'HOST': 'localhost',  # Atau alamat IP server database
+    #     'PORT': '3306',  # Port default MySQL
+    # }
 }
 
 

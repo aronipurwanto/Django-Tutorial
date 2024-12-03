@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Daftar Produk{% endblock %}
+
+{% block content %}
+    <h1>Daftar Produk</h1>
+    <table class="table">
+    <thead>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Category</td>
+        <td>Decription</td>
+        <td>Price</td>
+    </thead>
+    <tbody>
+        {% for product in products %}
+            <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
